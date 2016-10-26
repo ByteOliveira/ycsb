@@ -1,0 +1,6 @@
+mongo ycsb --eval "db.dropDatabase()"
+
+echo running with $1 threads
+
+./bin/ycsb load mongodb -P workloads/workload_t -threads $1
+./bin/ycsb run mongodb -P workloads/workload_t -threads $1
